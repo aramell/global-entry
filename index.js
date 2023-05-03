@@ -28,9 +28,9 @@ app.get("/send-email", async (req, res) => {
 
       const mailOptions = {
         from: "aramell7788@gmail.com",
-        to: "andrew.ramell@gmail.com, fully2k@gmail.com ",
+        to: process.env.SENDING_EMAILS,
         subject: "Global Entry appointment available!",
-        text: `Next available appointment: ${response.data.availableSlots[0].startTimestamp} rawData: ${response.data.availableSlots}
+        text: `Next available appointment: ${response.data.availableSlots[0].startTimestamp}
           
           sign up here: https://ttp.cbp.dhs.gov/schedulerui/schedule-interview/location?lang=en&vo=true&returnUrl=ttp-external&service=UP
           `,
