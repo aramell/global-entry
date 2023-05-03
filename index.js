@@ -28,7 +28,7 @@ app.get("/send-email", async (req, res) => {
 
       const mailOptions = {
         from: "aramell7788@gmail.com",
-        to: "andrew.ramell@gmail.com, jon.fulginiti@gmail.com ",
+        to: "andrew.ramell@gmail.com, fully2k@gmail.com ",
         subject: "Global Entry appointment available!",
         text: `Next available appointment: ${response.data.availableSlots[0].startTimestamp} rawData: ${response.data.availableSlots}
           
