@@ -28,7 +28,7 @@ app.get("/send-email", async (req, res) => {
 
       const mailOptions = {
         from: "aramell7788@gmail.com",
-        to: "andrew.ramell@gmail.com",
+        to: "andrew.ramell@gmail.com, jon.fulginiti@gmail.com ",
         subject: "Global Entry appointment available!",
         text: `Next available appointment: ${response.data.availableSlots[0].startTimestamp} rawData: ${response.data.availableSlots}
           
@@ -40,21 +40,7 @@ app.get("/send-email", async (req, res) => {
 
       res.send("Email sent successfully");
     } else {
-      console.log("No slots available");
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL_ADDRESS,
-          pass: process.env.EMAIL_PASSWORD,
-        },
-      });
-
-      const mailOptions = {
-        from: "aramell7788@gmail.com",
-        to: "andrew.ramell@gmail.com",
-        subject: "Global Entry not available",
-      };
-      await transporter.sendMail(mailOptions);
+      console.log("No slots available", new Date());
     }
   } catch (error) {
     console.error(error);
