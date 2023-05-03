@@ -1,8 +1,7 @@
-// Add Express
 const express = require("express");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
-// Initialize Express
+require("dotenv").config();
 const app = express();
 
 app.get("/send-email", async (req, res) => {
