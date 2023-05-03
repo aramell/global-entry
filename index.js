@@ -41,6 +41,7 @@ app.get("/send-email", async (req, res) => {
       res.send("Email sent successfully");
     } else {
       console.log("No slots available", new Date());
+      return res.send("No slots available");
     }
   } catch (error) {
     console.error(error);
