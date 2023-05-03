@@ -4,6 +4,8 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 const app = express();
 
+const locationId = 8120;
+
 app.get("/send-email", async (req, res) => {
   try {
     // Make the HTTP request
